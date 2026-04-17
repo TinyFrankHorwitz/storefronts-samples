@@ -8,7 +8,6 @@ document.querySelector('#app').innerHTML = `
 <title>OBSCURA — Headless Storefront</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Fragment+Mono&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 
