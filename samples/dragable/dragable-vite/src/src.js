@@ -226,4 +226,35 @@ export function init()
       document.body.style.overflow = '';
     }
   });  
+
+  //MODAL
+  const modal = document.getElementById("modal");
+  const modalMessage = document.getElementById("modalMessage");
+  const modalClose = document.getElementById("modalClose");
+
+  function openModal(message){
+    modalMessage.textContent = message;
+    modal.classList.add("open");
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.style.overflow = '';
+  }
+
+  modalClose.onclick = closeModal;
+
+  modal.addEventListener("click", (e)=>{
+    if(e.target === modal) closeModal();
+  });
+
+  // MODAL LISTENER -- replace when real case scenario.
+  document.querySelectorAll(".clickeable").forEach(b=>{
+    b.onclick = function(){
+      
+      openModal("Hey! this is a sample, that page isn't integrated.");
+    }
+  });
+  
 }

@@ -379,6 +379,28 @@
 
   .lightbox-close:hover { color: var(--rust); }
 
+  /* ── MODAL ── */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.96);
+    z-index: 9500;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal.open {
+    display: flex;
+  }
+
+  .modal-content {
+    background: var(--ink);
+    border: 1px solid var(--bone);
+    padding: 30px;
+    text-align: center;
+  }
+
   /* ── FOOTER ── */
   footer {
     position: relative;

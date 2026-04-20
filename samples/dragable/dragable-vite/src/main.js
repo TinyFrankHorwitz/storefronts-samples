@@ -15,11 +15,11 @@ document.querySelector('#app').innerHTML = `
 <nav>
   <a class="nav-logo" href="#">Obscura</a>
   <ul class="nav-links">
-    <li><a href="#">Collections</a></li>
-    <li><a href="#">Archive</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="#" class="clickeable">Collections</a></li>
+    <li><a href="#" class="clickeable">Archive</a></li>
+    <li><a href="#" class="clickeable">About</a></li>
   </ul>
-  <button class="nav-cart">Cart (0)</button>
+  <button class="nav-cart clickeable">Cart (0)</button>
 </nav>
 
 <!-- FLOATING IMAGE CANVAS (pointer-events: none on wrapper, all on children) -->
@@ -34,7 +34,15 @@ document.querySelector('#app').innerHTML = `
   <div class="lightbox-meta">
     <div class="lightbox-name" id="lightboxName"></div>
     <div class="lightbox-price" id="lightboxPrice"></div>
-    <button class="lightbox-add">Add to Cart</button>
+    <button class="lightbox-add clickeable">Add to Cart</button>
+  </div>
+</div>
+
+<!-- SIMPLE MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <p id="modalMessage">Hello</p>
+    <button id="modalClose" class="lightbox-add">Close</button>
   </div>
 </div>
 
@@ -64,7 +72,7 @@ document.querySelector('#app').innerHTML = `
     <div class="cta-eyebrow">Limited — Season 25</div>
     <h2 class="cta-title">WEAR THE<br><span>SHADOW</span></h2>
     <p class="cta-body">Each piece is produced in runs of twelve. Once gone, unrepeated. No restocks. No reprints.</p>
-    <button class="cta-btn"><span>Shop the Collection</span></button>
+    <button class="cta-btn clickeable"><span>Shop the Collection</span></button>
   </section>
 
   <footer>

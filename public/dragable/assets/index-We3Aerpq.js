@@ -2,7 +2,7 @@
       <img src="${e.src}" alt="${e.name}" draggable="false">
       <div class="img-price">${e.price}</div>
       <div class="img-label">${e.name}</div>
-    `,t.appendChild(i),n.push({el:i,product:e,visible:!1})});function r(){let e=window.scrollY/(document.body.scrollHeight-window.innerHeight);n.forEach(({el:t,product:n})=>{let r=n.triggerAt,i=r+.04,a=r+.28,o=r+.36,s=0;s=e<r?0:e<i?(e-r)/(i-r):e<a?1:e<o?1-(e-a)/(o-a):0,t.style.opacity=s;let c=.95+s*.05,l=t._translateCSS||``;t.style.transform=`${l} rotate(${n.rot}) scale(${c})`,t.classList.toggle(`visible`,s>.5)})}window.addEventListener(`scroll`,r,{passive:!0}),r(),n.forEach(({el:e,product:t})=>{let n=!1,r,i,a,o,s=!1;e.addEventListener(`mousedown`,t=>{n=!0,s=!1,r=t.clientX,i=t.clientY,a=e.offsetLeft,o=e.offsetTop,e.style.zIndex=600,e.style.transition=`opacity 0.6s ease, box-shadow 0.3s`,e.style.boxShadow=`0 30px 80px rgba(0,0,0,0.7)`,t.preventDefault()}),window.addEventListener(`mousemove`,t=>{if(!n)return;let c=t.clientX-r,l=t.clientY-i;(Math.abs(c)>4||Math.abs(l)>4)&&(s=!0),e._offsetX=c,e._offsetY=l,e.style.left=a+c+`px`,e.style.top=o+l+`px`}),window.addEventListener(`mouseup`,()=>{n&&(n=!1,e.style.zIndex=``,e.style.boxShadow=``,e.style.transition=`opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s`)}),e.addEventListener(`click`,()=>{s||c(t)})});let i=document.getElementById(`lightbox`),a=document.getElementById(`lightboxImg`),o=document.getElementById(`lightboxName`),s=document.getElementById(`lightboxPrice`);function c(e){a.src=e.src.replace(`w=500`,`w=900`),a.alt=e.name,o.textContent=e.name,s.textContent=e.price,i.classList.add(`open`),document.body.style.overflow=`hidden`}document.getElementById(`lightboxClose`).addEventListener(`click`,()=>{i.classList.remove(`open`),document.body.style.overflow=``}),i.addEventListener(`click`,e=>{e.target===i&&(i.classList.remove(`open`),document.body.style.overflow=``)}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&(i.classList.remove(`open`),document.body.style.overflow=``)})}document.querySelector(`#app`).innerHTML=`
+    `,t.appendChild(i),n.push({el:i,product:e,visible:!1})});function r(){let e=window.scrollY/(document.body.scrollHeight-window.innerHeight);n.forEach(({el:t,product:n})=>{let r=n.triggerAt,i=r+.04,a=r+.28,o=r+.36,s=0;s=e<r?0:e<i?(e-r)/(i-r):e<a?1:e<o?1-(e-a)/(o-a):0,t.style.opacity=s;let c=.95+s*.05,l=t._translateCSS||``;t.style.transform=`${l} rotate(${n.rot}) scale(${c})`,t.classList.toggle(`visible`,s>.5)})}window.addEventListener(`scroll`,r,{passive:!0}),r(),n.forEach(({el:e,product:t})=>{let n=!1,r,i,a,o,s=!1;e.addEventListener(`mousedown`,t=>{n=!0,s=!1,r=t.clientX,i=t.clientY,a=e.offsetLeft,o=e.offsetTop,e.style.zIndex=600,e.style.transition=`opacity 0.6s ease, box-shadow 0.3s`,e.style.boxShadow=`0 30px 80px rgba(0,0,0,0.7)`,t.preventDefault()}),window.addEventListener(`mousemove`,t=>{if(!n)return;let c=t.clientX-r,l=t.clientY-i;(Math.abs(c)>4||Math.abs(l)>4)&&(s=!0),e._offsetX=c,e._offsetY=l,e.style.left=a+c+`px`,e.style.top=o+l+`px`}),window.addEventListener(`mouseup`,()=>{n&&(n=!1,e.style.zIndex=``,e.style.boxShadow=``,e.style.transition=`opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s`)}),e.addEventListener(`click`,()=>{s||c(t)})});let i=document.getElementById(`lightbox`),a=document.getElementById(`lightboxImg`),o=document.getElementById(`lightboxName`),s=document.getElementById(`lightboxPrice`);function c(e){a.src=e.src.replace(`w=500`,`w=900`),a.alt=e.name,o.textContent=e.name,s.textContent=e.price,i.classList.add(`open`),document.body.style.overflow=`hidden`}document.getElementById(`lightboxClose`).addEventListener(`click`,()=>{i.classList.remove(`open`),document.body.style.overflow=``}),i.addEventListener(`click`,e=>{e.target===i&&(i.classList.remove(`open`),document.body.style.overflow=``)}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&(i.classList.remove(`open`),document.body.style.overflow=``)});let l=document.getElementById(`modal`),u=document.getElementById(`modalMessage`),d=document.getElementById(`modalClose`);function f(e){u.textContent=e,l.classList.add(`open`),document.body.style.overflow=`hidden`}function p(){l.classList.remove(`open`),document.body.style.overflow=``}d.onclick=p,l.addEventListener(`click`,e=>{e.target===l&&p()}),document.querySelectorAll(`.clickeable`).forEach(e=>{e.onclick=function(){f(`Hey! this is a sample, that page isn't integrated.`)}})}document.querySelector(`#app`).innerHTML=`
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,11 @@
 <nav>
   <a class="nav-logo" href="#">Obscura</a>
   <ul class="nav-links">
-    <li><a href="#">Collections</a></li>
-    <li><a href="#">Archive</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="#" class="clickeable">Collections</a></li>
+    <li><a href="#" class="clickeable">Archive</a></li>
+    <li><a href="#" class="clickeable">About</a></li>
   </ul>
-  <button class="nav-cart">Cart (0)</button>
+  <button class="nav-cart clickeable">Cart (0)</button>
 </nav>
 
 <!-- FLOATING IMAGE CANVAS (pointer-events: none on wrapper, all on children) -->
@@ -35,7 +35,15 @@
   <div class="lightbox-meta">
     <div class="lightbox-name" id="lightboxName"></div>
     <div class="lightbox-price" id="lightboxPrice"></div>
-    <button class="lightbox-add">Add to Cart</button>
+    <button class="lightbox-add clickeable">Add to Cart</button>
+  </div>
+</div>
+
+<!-- SIMPLE MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <p id="modalMessage">Hello</p>
+    <button id="modalClose" class="lightbox-add">Close</button>
   </div>
 </div>
 
@@ -65,7 +73,7 @@
     <div class="cta-eyebrow">Limited — Season 25</div>
     <h2 class="cta-title">WEAR THE<br><span>SHADOW</span></h2>
     <p class="cta-body">Each piece is produced in runs of twelve. Once gone, unrepeated. No restocks. No reprints.</p>
-    <button class="cta-btn"><span>Shop the Collection</span></button>
+    <button class="cta-btn clickeable"><span>Shop the Collection</span></button>
   </section>
 
   <footer>
